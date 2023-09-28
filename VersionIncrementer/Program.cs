@@ -29,8 +29,8 @@ internal class Program {
 				services.AddSingleton(_ => new ArgsProvider(args));
 				services.AddTransient<ICommandlineProcessor, CommandlineProcessor>();
 				services.AddTransient<IVersionNumberParser, VersionNumberParser>();
-				services.AddTransient<IVersionFileModifier, VersionFileModifier>();
 				//services.AddTransient<IVersionNumberParser, ReverseVersionNumberParser>();
+				services.AddTransient<IVersionFileModifier, VersionFileModifier>();
 
 				services.AddHostedService<ConsoleAppService>();
 			})

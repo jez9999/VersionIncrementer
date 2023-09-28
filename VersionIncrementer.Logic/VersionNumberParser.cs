@@ -3,9 +3,9 @@
 namespace VersionIncrementer.Logic;
 
 /// <summary>
-/// Parses version number strings.
+/// Parses version number strings with segments in reverse.
 /// </summary>
-public class ReverseVersionNumberParser : IVersionNumberParser {
+public class VersionNumberParser : IVersionNumberParser {
 	public VersionNumber Parse(string versionString) {
 		var segments = versionString.Split('.');
 		if (segments.Length != 4) {
@@ -17,7 +17,7 @@ public class ReverseVersionNumberParser : IVersionNumberParser {
 			if (!uint.TryParse(segments[i], out uint segmentInt)) {
 				throw new Exception($"Invalid version string: segment {i + 1} is not a non-negative number.");
 			}
-			segmentInts[3 - i] = segmentInt;
+			segmentInts[i] = segmentInt;
 		}
 
 		return new VersionNumber(segmentInts[0], segmentInts[1], segmentInts[2], segmentInts[3]);
