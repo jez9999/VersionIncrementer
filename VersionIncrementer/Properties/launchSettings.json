@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "VersionIncrementer": {
+      "commandName": "Project",
+      "commandLineArgs": "feature"
+    }
+  }
+}
