@@ -73,6 +73,7 @@ internal class ConsoleAppService : BackgroundService {
 	}
 
 	private static void incrementVersion(IncrementType incrementType, VersionNumber version) {
+		// TODO: this logic could be moved into VersionNumber (ie. version.Increment(IncrementType.Feature))
 		switch (incrementType) {
 			case IncrementType.Feature:
 				version.Third++;
