@@ -3,7 +3,7 @@
 namespace VersionIncrementer.Logic;
 
 /// <summary>
-/// Parses version number strings with segments in reverse.
+/// Parses version number strings.
 /// </summary>
 public class VersionNumberParser : IVersionNumberParser {
 	public VersionNumber Parse(string versionString) {
